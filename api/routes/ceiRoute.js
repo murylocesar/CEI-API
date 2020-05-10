@@ -1,9 +1,9 @@
 module.exports = app => {
     const controller = app.controllers.ceiController;
 
-    app.route('/api/stockHistory')
+    app.route('/stockHistory')
       .post(controller.getStockHistory);
     
-    app.route('/api/dividends')
+    app.route('/dividends')
       .post(controller.getDividends);
 }
