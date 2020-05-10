@@ -46,7 +46,9 @@ module.exports = () => {
         let password = req.body.password;
         
         let cei = new ceiCrawler(username, password, {
-          /* options */
+          puppeteerLaunch: {
+              args: [ '--no-sandbox', '--disable-setuid-sandbox' ]
+          },
           trace: true
         });
         
