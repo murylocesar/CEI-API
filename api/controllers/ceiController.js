@@ -2,7 +2,7 @@ module.exports = () => {
     const ceiCrawler = require("cei-crawler")
     const controller = {};
     
-    controller.getStockHistory = async (req, res) => {
+    controller.getStockHistory = async (req, res, next) => {
         let username = req.body.username;
         let password = req.body.password;
         
