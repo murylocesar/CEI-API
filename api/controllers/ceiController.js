@@ -1,5 +1,5 @@
 module.exports = () => {
-    const ceiCrawler = require("cei-crawler")
+    const CeiCrawler = require("cei-crawler")
     const controller = {};
     
     controller.getStockHistory = async (req, res, next) => {
@@ -8,7 +8,7 @@ module.exports = () => {
         let username = req.body.username;
         let password = req.body.password;
         
-        let cei = new ceiCrawler(username, password, {
+        let ceiCrawler = new CeiCrawler(username, password, {
           puppeteerLaunch: {
               args: [ '--no-sandbox', '--disable-setuid-sandbox' ]
           },
@@ -22,20 +22,20 @@ module.exports = () => {
                 (typeof(req.body.endDate) == "undefined" || req.body.endDate == null)) {
                 
                 console.log(`Buscando histórico s/ data`)
-                result = await cei.getStockHistory();
+                result = await ceiCrawler.getStockHistory();
             }
             else {
                 let startDate = new Date(req.body.startDate);
                 let endDate = new Date(req.body.endDate);
                 
                 console.log(`Buscando histórico c/ data`)
-                result = await cei.getStockHistory(startDate, endDate);
+                result = await ceiCrawler.getStockHistory(startDate, endDate);
             }
 
             res.status(200).json(result);
         } catch (err) {
             console.log(`Erro getStockHistory :(`)
-            next(err)
+            res.status(500).json(err)
         }
     }
     
@@ -45,7 +45,7 @@ module.exports = () => {
         let username = req.body.username;
         let password = req.body.password;
         
-        let cei = new ceiCrawler(username, password, {
+        let ceiCrawler = new CeiCrawler(username, password, {
           puppeteerLaunch: {
               args: [ '--no-sandbox', '--disable-setuid-sandbox' ]
           },
@@ -55,11 +55,11 @@ module.exports = () => {
         try {
             console.log(`Buscando dividendos`)
 
-            let result = await cei.getDividends();
+            let result = await ceiCrawler.getDividends();
             res.status(200).json(result);
         } catch (err) {
             console.log(`Erro getDividends :(`)
-            next(err)
+            res.status(500).json(err)
         }
     }
 
