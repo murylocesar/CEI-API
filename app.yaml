@@ -1,0 +1,6 @@
+runtime: nodejs12
+
+inbound_services:
+- warmup
+
+instance_class: F2
