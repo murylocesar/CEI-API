@@ -10,7 +10,10 @@ module.exports = () => {
         
         let ceiCrawler = new CeiCrawler(username, password, {
           puppeteerLaunch: {
-              args: [ '--no-sandbox', '--disable-setuid-sandbox' ]
+              args: [ '--no-sandbox',
+                      '--disable-setuid-sandbox',
+                      '--disable-dev-shm-usage',
+                      '--single-process' ]
           },
           trace: true
         });
@@ -47,7 +50,10 @@ module.exports = () => {
         
         let ceiCrawler = new CeiCrawler(username, password, {
           puppeteerLaunch: {
-              args: [ '--no-sandbox', '--disable-setuid-sandbox' ]
+              args: [ '--no-sandbox',
+                      '--disable-setuid-sandbox',
+                      '--disable-dev-shm-usage',
+                      '--single-process' ]
           },
           trace: true
         });
