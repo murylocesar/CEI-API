@@ -1,4 +1,4 @@
-# api-cei 
+# CEI REST API
 API REST que retorna dados do CEI([Canal Eletrônico do Investidor](https://cei.b3.com.br/)) utilizando o package [cei-crawler](https://github.com/Menighin/cei-crawler).
 
 
