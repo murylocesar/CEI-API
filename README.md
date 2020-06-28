@@ -29,6 +29,6 @@ npm start
 |---------------------|-----------|---------------|--------------------------------------------------------------------|
 | **getStockHistory** | POST      | /stockhistory | `username`, `password`, `dateStart`(opcional), `dateEnd`(opcional) |
 | **getDividends**    | POST      | /dividends    | `username`, `password`                                             |
-| **getWallet**       | POST      | /wallet       | `username`, `password`, `date`(opcional)                                                   |
+| **getWallet**       | POST      | /wallet       | `username`, `password`, `date`(opcional)                           |
 
 Detalhes de cada um desses métodos estão listados [aqui](https://github.com/Menighin/cei-crawler/blob/master/README.md#utilização).
