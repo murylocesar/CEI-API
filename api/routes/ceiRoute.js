@@ -6,4 +6,7 @@ module.exports = app => {
     
     app.route('/dividends')
       .post(controller.getDividends);
+    
+    app.route('/wallet')
+      .post(controller.getWallet);
 }
