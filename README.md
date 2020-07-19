@@ -10,7 +10,7 @@ API REST que retorna dados do CEI([Canal Eletrônico do Investidor](https://cei.
 ### Instalação
 1. Clone o repositório
 ```bash
-git clone https://github.com/matheuspcunha/api-cei && cd api-cei
+git clone https://github.com/matheuspcunha/CEI-API && cd api-cei
 ```
 
 2. Instale as dependências
